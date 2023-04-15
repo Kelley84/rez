@@ -1,0 +1,229 @@
+:root {
+    --pageWidth: 1300px;
+    --pageHeight: 1800px;
+    /*  */
+    --leftColumnWidth: 930px;
+    --rightColumnWidth: 340px;
+    --bottomLeftColumnTopPosition: 135px;
+    --borderOffset: 10px;
+    /*  */
+    --colBgColor: rgba(255, 255, 255);
+    --binaryBgColor: rgba(190, 190, 190, 0.8);
+    --binaryColor: rgba(238, 238, 238, 0.8);
+    /*  */
+    --expTitleColor: rgb(0, 0, 0);
+    --expEntityColor: rgb(11, 11, 88);
+    --expLocTimeColor: rgb(85, 85, 85);
+    --expDescClolor: rgb(51, 70, 76);
+    /*  */
+    --skillBorderColor: lightgray;
+}
+
+#page {
+    /* font-family: "Times New Roman", Times, serif; */
+    font-family: Arial, Helvetica, sans-serif;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    width: var(--pageWidth);
+    height: var(--pageHeight);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgb(58, 58, 95);
+}
+
+#binary {
+    background-color: var(--binaryBgColor);
+    color: var(--binaryColor);
+    opacity: 0.7;
+    font-size: xx-small;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1000;
+    width: inherit;
+    word-wrap: break-word;
+}
+
+.colAll {
+    background-color: var(--colBgColor);
+}
+
+#colRight {
+    position: absolute;
+    top: var(--borderOffset);
+    right: var(--borderOffset);
+    bottom: var(--borderOffset);;
+    width: var(--rightColumnWidth);
+    padding: 10px;
+}
+
+#colRight span {
+    text-align: right;
+}
+
+#colExp {
+    position: absolute;
+    top: var(--bottomLeftColumnTopPosition);
+    left: var(--borderOffset);
+    bottom: var(--borderOffset);
+    width: var(--leftColumnWidth);
+    height: auto;
+    padding: 10px;
+}
+
+#divName {
+    position: absolute;
+    left: var(--borderOffset);
+    top: var(--borderOffset);
+    width: var(--leftColumnWidth);
+    background-color: var(--colBgColor);
+    text-align: center;
+}
+
+span {
+    position: relative;
+    margin-left: 5px;
+    padding: 5px;
+    z-index: 1000;
+    display: block;
+}
+
+span i {
+    margin-right: 10px;
+}
+
+#myName {
+    font-size: 70px;
+    font-weight: bolder;
+    padding: 5px;
+    font-stretch: expanded;
+}
+
+.txtHead {
+    font-size: 30px !important;
+    font-weight: bold !important;
+    color: darkgrey;
+    /* margin-top: 10px !important; */
+}
+
+/* Experience */
+#colExp span {
+    padding: 5px;
+    margin-left: 10px;
+}
+
+.expDiv {
+    margin: 5px;
+    padding: 5px;
+    /* border: 1px solid var(--skillBorderColor); */
+    border-bottom: 1px solid var(--skillBorderColor);
+    border-right: 1px solid var(--skillBorderColor);
+    margin-bottom: 15px;
+}
+
+.expTitle {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--expTitleColor);
+}
+
+.expEntity {
+    font-size: 20px;
+    color: var(--expEntityColor);
+}
+
+.expLocTime {
+    font-size: 20px;
+    display: inline-flex;
+    color: var(--expLocTimeColor);
+}
+
+.expDetails {
+    font-size: 20px;
+    /* font-style: italic; */
+    color: var(--expDescClolor);
+    padding: 5px;
+    margin-left: 25px;
+}
+
+/* Contact info */
+#contact span {
+    text-align: left;
+    color: rgb(74, 74, 74);
+    font-size: 18px;
+}
+
+/* Skills */
+.skillMain {
+    /* border: 1px solid var(--skillBorderColor); */
+    border-top: none;
+}
+
+.skillGroup {
+    /* border: 1px solid var(--skillBorderColor); */
+    /* border-bottom: none; */
+    margin: 5px;
+}
+
+.skillSubGroup {
+    /* margin-left: 5px; */
+    border-left: 1px solid var(--skillBorderColor);
+    border-bottom: 1px solid var(--skillBorderColor);
+}
+
+.skillGroupSpan {
+    font-size: 24px;
+    margin: 0;
+    /* text-align: center !important; */
+}
+
+.skillSubGroupSpan {
+    font-size: 22px;
+    font-weight: bold;
+    color: rgb(97, 97, 97);
+    /* text-align: center !important; */
+}
+
+/* .skillTopBorder {
+    border-top: 1px solid var(--skillBorderColor);
+}
+
+.skillBottomBorder {
+    border-bottom: 1px solid var(--skillBorderColor);
+} */
+
+.skillListDiv {
+    width: 100%;
+    padding: 5px;
+}
+
+.skillText {
+    font-size: 20px;
+    /* text-align: left !important; */
+}
+
+.skillRatingDiv {
+    height: 10px;
+    width: 100%;
+    padding: 0;
+    border: 1px solid lightgray;
+    background-color: lightgray;
+}
+
+.skillRatingBar {
+    height: 10px;
+    background-color: rgb(170, 170, 170);
+}
+
+/* Education & Certs */
+.eduTitle {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(27, 14, 74);
+}
+
+.eduDetail {
+    font-size: 16px;
+    color: rgb(97, 97, 97);
+}
