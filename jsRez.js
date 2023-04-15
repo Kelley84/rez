@@ -69,7 +69,7 @@ function generateDevExpJob(job) {
     // div.appendChild(spanEntity);
     //
     div.appendChild(generateLocTime(job.location, job.timeframe, job.entity));
-    div.appendChild(generateDetail(job.details));
+    div.appendChild(generateDuties(job.duties, false));
     //
     return div;
 }
@@ -100,14 +100,15 @@ function generateLocTime(loc, time, entity) {
     return div;
 }
 
-function generateDetail(deets) {
+function generateDuties(duties, detail) {
     var ul = document.createElement('ul');
-    ul.style.listStyleType = "square";
+    ul.style.listStyleType = (detail) ? "circle" : "square";
     //
-    deets.forEach(function(deet) {
+    duties.forEach(function(duty) {
         var li = document.createElement('li');
         li.classList.add("expDetails");
-        li.innerText = deet;
+        li.innerText = (detail) ? duty : duty.duty;
+        if (duty.details) { li.appendChild(generateDuties(duty.details, true)); }
         ul.appendChild(li);
     });
     //
@@ -126,26 +127,37 @@ function getDevExpJSON() {
     //~ adding more to details   //LEFT OFF HERE!!!!!!!!!!!!!!!!!!!!!
     //
     json += '{"exp":[';
-    json += '{"title":"Programmer Analyst 4 (IT Manager)","entity":"WV Racing","location":"Charleston, WV","timeframe":"Nov 2021 - Present","duties":[';
-    json += '"Refactored accounting algorithm from legacy audit application",';
-    json += '"Updated IRS electronic file generation process"]},';
+    json += '{"title":"Programmer Analyst 4 (IT Manager)",';
+    json += '"entity":"WV Racing","location":"Charleston, WV","timeframe":"Nov 2021 - Present",';
+    json += '"duties":[';
+    json += '{"duty":"Refactored accounting algorithm from legacy audit application","details":[';
+    json += '"detail1","detail2"]},';
+    json += '{"duty":"Updated IRS electronic file generation process"}]},';
     //
-    json += '{"title":"Programmer Analyst 3","entity":"WV OIC","location":"Charleston, WV","timeframe":"Jun 2019 - Nov 2021","duties":[';
-    json += '"Senior developer, Web master",';
-    json += '"Lead complex debugging and disaster recovery efforts",';
-    json += '"Exemplified and facilitated continuous learning"]},';
+    json += '{"title":"Programmer Analyst 3",';
+    json += '"entity":"WV OIC","location":"Charleston, WV","timeframe":"Jun 2019 - Nov 2021",';
+    json += '"duties":[';
+    json += '{"duty":"Senior developer, Web master"},';
+    json += '{"duty":"Lead complex debugging and disaster recovery efforts"},';
+    json += '{"duty":"Exemplified and facilitated continuous learning"}]},';
     //
-    json += '{"title":"Programmer Analyst 1 - Programmer Analyst 2","entity":"WV DHHR","location":"Charleston, WV","timeframe":"Jan 2015 - Nov 2016 - Jun 2019","duties":[';
-    json += '"Designed and optimized data information systems",';
-    json += '"Head SharePoint developer"]},';
+    json += '{"title":"Programmer Analyst 1 - Programmer Analyst 2",';
+    json += '"entity":"WV DHHR","location":"Charleston, WV","timeframe":"Jan 2015 - Nov 2016 - Jun 2019",';
+    json += '"duties":[';
+    json += '{"duty":"Designed and optimized data information systems"},';
+    json += '{"duty":"Head SharePoint developer"}]},';
     //
-    json += '{"title":"Database Manager - IT Manager","entity":"Appalachian Tire","location":"Charleston, WV","timeframe":"Feb 2010 - Feb 2014 - Jan 2015","duties":[';
-    json += '"Automated system processes",';
-    json += '"Developed reports for data analytics"]},';
+    json += '{"title":"Database Manager - IT Manager",';
+    json += '"entity":"Appalachian Tire","location":"Charleston, WV","timeframe":"Feb 2010 - Feb 2014 - Jan 2015",';
+    json += '"duties":[';
+    json += '{"duty":"Automated system processes"},';
+    json += '{"duty":"Developed reports for data analytics"}]},';
     //
-    json += '{"title":"Data Entry Programmer","entity":"Trenton Technology","location":"Utica, NY","timeframe":"Nov 2008 - Nov 2009","duties":[';
-    json += '"Managed legacy data collection applications",';
-    json += '"Developed management utility software"]}';
+    json += '{"title":"Data Entry Programmer",';
+    json += '"entity":"Trenton Technology","location":"Utica, NY","timeframe":"Nov 2008 - Nov 2009",';
+    json += '"duties":[';
+    json += '{"duty":"Managed legacy data collection applications"},';
+    json += '{"duty":"Developed management utility software"}]}';
     //
     json += ']}';
     //
