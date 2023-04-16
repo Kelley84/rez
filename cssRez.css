@@ -4,7 +4,7 @@
     /*  */
     --leftColumnWidth: 930px;
     --rightColumnWidth: 340px;
-    --bottomLeftColumnTopPosition: 100px;
+    --bottomLeftColumnTopPosition: 150px;
     --borderOffset: 10px;
     /*  */
     --colBgColor: rgba(255, 255, 255);
@@ -94,7 +94,7 @@ span i {
 }
 
 #myName {
-    font-size: 50px;
+    font-size: 75px;
     font-weight: bolder;
     /* margin-left: 15%; */
     /* padding: 5px; */
@@ -136,8 +136,15 @@ span i {
 
 .expLocTime {
     font-size: 20px;
-    display: inline-flex;
+    display: inline;
     color: var(--expLocTimeColor);
+}
+
+.expDuties {
+    font-size: 20px;
+    color: var(--expDescClolor);
+    padding: 5px;
+    margin-left: 15px;
 }
 
 .expDetails {
@@ -145,12 +152,11 @@ span i {
     /* font-style: italic; */
     color: var(--expDescClolor);
     padding: 5px;
-    margin-left: 25px;
 }
 
 /* Contact info */
 #contact span {
-    text-align: left;
+    text-align: right;
     color: rgb(74, 74, 74);
     font-size: 18px;
 }

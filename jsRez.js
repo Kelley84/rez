@@ -10,6 +10,7 @@ var _fa_phone = "fa fa-phone";
 var _fa_linkedin = "fa fa-linkedin";
 var _fa_entity = "fa fa-light fa-building";
 var _fa_me = "fa fa-light fa-user";
+var _fa_github = "fa fa-github";
 
 //bootstrap classes
 var _bs_colmd6 = "col-md-6";
@@ -88,11 +89,12 @@ function generateLocTime(loc, time, entity) {
     var spanEntity = document.createElement('span');
     spanEntity.innerText = entity;
     spanEntity.classList.add("expLocTime");
+    spanEntity.prepend(elFA(_fa_entity));
     div.appendChild(spanEntity);
     //
     //~ maybe too many fa icons
-    // spanLoc.prepend(elFA(_fa_map));
-    // spanTime.prepend(elFA(_fa_calendar));
+    spanLoc.prepend(elFA(_fa_map));
+    spanTime.prepend(elFA(_fa_calendar));
     //
     div.appendChild(spanLoc);
     div.appendChild(spanTime);
@@ -102,11 +104,12 @@ function generateLocTime(loc, time, entity) {
 
 function generateDuties(duties, detail) {
     var ul = document.createElement('ul');
+    var liClass = (detail) ? "expDetails" : "expDuties";
     ul.style.listStyleType = (detail) ? "circle" : "square";
     //
     duties.forEach(function(duty) {
         var li = document.createElement('li');
-        li.classList.add("expDetails");
+        li.classList.add(liClass);
         li.innerText = (detail) ? duty : duty.duty;
         if (duty.details) { li.appendChild(generateDuties(duty.details, true)); }
         ul.appendChild(li);
@@ -124,17 +127,17 @@ function elFA(classes) {
 function getDevExpJSON() {
     var json = '';
     //
-    //~ adding more to details   //LEFT OFF HERE!!!!!!!!!!!!!!!!!!!!!
+    //~ adding more to details
     //
     json += '{"exp":[';
-    json += '{"title":"Programmer Analyst 4 (IT Manager)",';
+    json += '{"title":"Programmer Analyst 4",';
     json += '"entity":"WV Racing","location":"Charleston, WV","timeframe":"Nov 2021 - Present",';
     json += '"duties":[';
     json += '{"duty":"Refactored accounting algorithm from legacy audit application","details":[';
-    json += '"Hyper-V p2v cloned WinXP production; v2p cloned test environment",';
-    json += '"Refactored ObjectPAL to C# Models w/SQL Database"]},';
+    json += '"Hyper-V p2v cloned WinXP production; v2p created test environment",';
+    json += '"Refactored ObjectPAL to C# Models, SQL Database"]},';
     json += '{"duty":"Updated IRS electronic file generation process", "details":[';
-    json += '"MISC-1099 format change in 2022; process created in Alpha Anywhere"]}';
+    json += '"1099-MISC format change in 2022; process created in Alpha Anywhere"]}';
     json += ']},';
     //
     json += '{"title":"Programmer Analyst 3",';
@@ -146,11 +149,8 @@ function getDevExpJSON() {
     json += '"Source control admin (TFS); backup DBA (Oracle); interview and train developers",';
     json += '"Restyled public site; collaborated with executive on requirements (CSS3)",';
     json += '"Developed public forms that utilize vendor web services (WSDL, SOAP)",';
-    json += '"Developed intranet web utility applications (Windows Authentication, MVC)"]}'
+    json += '"Developed intranet utility applications (Windows Authentication, MVC)"]}'
     json += ']},';
-    //json += '{"duty":"Webmaster"},';
-    //json += '{"duty":"Lead complex debugging and disaster recovery efforts"},';
-    //json += '{"duty":"Exemplified and facilitated continuous learning"}]},';
     //
     json += '{"title":"Programmer Analyst 1 - Programmer Analyst 2",';
     json += '"entity":"WV DHHR","location":"Charleston, WV","timeframe":"Jan 2015 - Nov 2016 - Jun 2019",';
@@ -166,9 +166,9 @@ function getDevExpJSON() {
     json += '{"title":"Database Manager - IT Manager",';
     json += '"entity":"Appalachian Tire","location":"Charleston, WV","timeframe":"Feb 2010 - Feb 2014 - Jan 2015",';
     json += '"duties":[';
-    json += '{"duty":"Automated system processes", "details":[';
-    json += '"Refactored",';
-    json += '"Public"]}';
+    json += '{"duty":"Developed custom reports for business intelligence (VBA, VB.Net)"},'
+    json += '{"duty":"Automated point-of-sale system processes (Reflection for UNIX, VBA)", "details":[';
+    json += '"Daily review; pricing updates; end-of-month process; import vendor invoices; corrections"]}';
     json += ']},';
     //
     json += '{"title":"Data Entry Programmer",';
@@ -312,12 +312,19 @@ function getSkillsJSON() {
     //~ changed to single list (no groups or subgroups or ratings like below)
     //
     json += '{"skill":[';
-    json += '{"text":"HTML, CSS, JS, DOM"},';
-    json += '{"text":"BS, jQuery, AJAX, Razor"},';
+    json += '{"text":"HTML5"},';
+    json += '{"text":"CSS3"},';
+    json += '{"text":"BootStrap"},';
+    json += '{"text":"JavaScript, DOM"},';
+    json += '{"text":"jQuery, AJAX, Razor"},';
     json += '{"text":"C#, MVC, LINQ"},';
-    json += '{"text":"Java, VB, ASP"},';
-    json += '{"text":"SQL, SSMS"},';
-    json += '{"text":"PL/SQL, Oracle"},';
+    json += '{"text":"WPF, XAML"},';
+    json += '{"text":"VB6, VBA, VB.Net"},';
+    json += '{"text":"ASP, ASP.Net"},';
+    json += '{"text":"SQL, PL/SQL"},';
+    json += '{"text":"XML, JSON"},';
+    json += '{"text":"SharePoint, DNN"},';
+    json += '{"text":"TFS, GitHub"},';
     json += '{"text":"Networking, Cloud, VMs"}';
     json += ']}';
     //
@@ -354,7 +361,7 @@ function loadContact() {
     var span;
     //
     span = document.createElement('span');
-    span.innerText = "linkedin.com/in/kelley-mcderment/";
+    span.innerText = "linkedin.com/in/kelley-mcderment";
     span.prepend(elFA(_fa_linkedin));
     div.appendChild(span);
     //
@@ -364,8 +371,8 @@ function loadContact() {
     div.appendChild(span);
     //
     span = document.createElement('span');
-    span.innerText = "304-444-5868";
-    span.prepend(elFA(_fa_phone));
+    span.innerText = "github.com/Kelley84";
+    span.prepend(elFA(_fa_github));
     div.appendChild(span);
     //
     span = document.createElement('span');
@@ -373,15 +380,12 @@ function loadContact() {
     span.prepend(elFA(_fa_map));
     div.appendChild(span);
     //
-    // span = document.createElement('span');
-    // span.innerText = "www.mcderments.com\\kelley";
-    // span.prepend(elFA(_fa_globe));
-    // div.appendChild(span);
+    span = document.createElement('span');
+    span.innerText = "304-444-5868";
+    span.prepend(elFA(_fa_phone));
+    div.appendChild(span);
     //
-    // span = document.createElement('span');
-    // span.innerText = "linkedin.com/in/kelley-mcderment/";
-    // span.prepend(elFA(_fa_linkedin));
-    // div.appendChild(span);
+
     //
     document.getElementById('contact').appendChild(div);
 }
