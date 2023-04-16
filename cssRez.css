@@ -78,7 +78,7 @@
     top: var(--borderOffset);
     width: var(--leftColumnWidth);
     background-color: var(--colBgColor);
-    text-align: left;
+    text-align: center;
 }
 
 span {
@@ -96,7 +96,7 @@ span i {
 #myName {
     font-size: 50px;
     font-weight: bolder;
-    margin-left: 15%;
+    /* margin-left: 15%; */
     /* padding: 5px; */
     font-stretch: expanded;
 }
@@ -115,8 +115,8 @@ span i {
 }
 
 .expDiv {
-    margin: 5px;
-    padding: 5px;
+    margin-left: 5px;
+    /* padding: 5px; */
     /* border: 1px solid var(--skillBorderColor); */
     border-bottom: 1px solid var(--skillBorderColor);
     border-right: 1px solid var(--skillBorderColor);

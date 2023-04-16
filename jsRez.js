@@ -131,33 +131,51 @@ function getDevExpJSON() {
     json += '"entity":"WV Racing","location":"Charleston, WV","timeframe":"Nov 2021 - Present",';
     json += '"duties":[';
     json += '{"duty":"Refactored accounting algorithm from legacy audit application","details":[';
-    json += '"detail1","detail2"]},';
-    json += '{"duty":"Updated IRS electronic file generation process"}]},';
+    json += '"Hyper-V p2v cloned WinXP production; v2p cloned test environment",';
+    json += '"Refactored ObjectPAL to C# Models w/SQL Database"]},';
+    json += '{"duty":"Updated IRS electronic file generation process", "details":[';
+    json += '"MISC-1099 format change in 2022; process created in Alpha Anywhere"]}';
+    json += ']},';
     //
     json += '{"title":"Programmer Analyst 3",';
     json += '"entity":"WV OIC","location":"Charleston, WV","timeframe":"Jun 2019 - Nov 2021",';
     json += '"duties":[';
-    json += '{"duty":"Senior developer, Web master"},';
-    json += '{"duty":"Lead complex debugging and disaster recovery efforts"},';
-    json += '{"duty":"Exemplified and facilitated continuous learning"}]},';
+    json += '{"duty":"Senior developer, Webmaster", "details":[';
+    json += '"Contributor to agile development of case management systems (WPF, XAML)",';
+    json += '"Collaborate with BA to create requirements; develop procedures (PL/SQL)",';
+    json += '"Source control admin (TFS); backup DBA (Oracle); interview and train developers",';
+    json += '"Restyled public site; collaborated with executive on requirements (CSS3)",';
+    json += '"Developed public forms that utilize vendor web services (WSDL, SOAP)",';
+    json += '"Developed intranet web utility applications (Windows Authentication, MVC)"]}'
+    json += ']},';
+    //json += '{"duty":"Webmaster"},';
+    //json += '{"duty":"Lead complex debugging and disaster recovery efforts"},';
+    //json += '{"duty":"Exemplified and facilitated continuous learning"}]},';
     //
     json += '{"title":"Programmer Analyst 1 - Programmer Analyst 2",';
     json += '"entity":"WV DHHR","location":"Charleston, WV","timeframe":"Jan 2015 - Nov 2016 - Jun 2019",';
     json += '"duties":[';
-    json += '{"duty":"Designed and optimized data information systems"},';
-    json += '{"duty":"Head SharePoint developer"}]},';
+    json += '{"duty":"Senior SharePoint developer, Web developer", "details":[';
+    json += '"Refactored legislation process for introducing new bills (SP Workflows)",';
+    json += '"Developed out-of-scope functionality (SP Designer, JS, DOM)",';
+    json += '"Maintained intranet site (ColdFusion); refactored data layer (Access to SQL)",';
+    json += '"Refactored interstate site IPACT (ColdFusion to C#, MVC, EF)",';
+    json += '"Public form for child support (VB/ASP.Net); English & Spanish (RESX)"]}';
+    json += ']},';
     //
     json += '{"title":"Database Manager - IT Manager",';
     json += '"entity":"Appalachian Tire","location":"Charleston, WV","timeframe":"Feb 2010 - Feb 2014 - Jan 2015",';
     json += '"duties":[';
-    json += '{"duty":"Automated system processes"},';
-    json += '{"duty":"Developed reports for data analytics"}]},';
+    json += '{"duty":"Automated system processes", "details":[';
+    json += '"Refactored",';
+    json += '"Public"]}';
+    json += ']},';
     //
     json += '{"title":"Data Entry Programmer",';
     json += '"entity":"Trenton Technology","location":"Utica, NY","timeframe":"Nov 2008 - Nov 2009",';
     json += '"duties":[';
-    json += '{"duty":"Managed legacy data collection applications"},';
-    json += '{"duty":"Developed management utility software"}]}';
+    json += '{"duty":"Maintained legacy data collection applications (VB6)"},';
+    json += '{"duty":"Developed management utility software (VB.Net, SQL)"}]}';
     //
     json += ']}';
     //
