@@ -2,10 +2,18 @@
     --pageWidth: 1300px;
     --pageHeight: 1800px;
     /*  */
-    --leftColumnWidth: 930px;
-    --rightColumnWidth: 340px;
+    --leftColumnWidth: 915px;
+    --rightColumnWidth: 335px;
     --bottomLeftColumnTopPosition: 150px;
-    --borderOffset: 10px;
+    --divNameHeight: 120px;
+    --borderOffset: 15px;
+    /*  */
+    --clipContactX: 50px;
+    --clipTopY: 75px;
+    --clipMidY: 125px;
+    --clipBotY: 175px; 
+    --clipNameX: calc(var(--leftColumnWidth) - var(--clipContactX));
+    --clipExpY: calc(var(--clipBotY) - var(--bottomLeftColumnTopPosition) + var(--borderOffset));
     /*  */
     --colBgColor: rgba(255, 255, 255);
     --binaryBgColor: rgba(190, 190, 190, 0.8);
@@ -56,6 +64,7 @@
     bottom: var(--borderOffset);;
     width: var(--rightColumnWidth);
     padding: 10px;
+    clip-path: polygon(0 var(--clipTopY), var(--clipContactX) var(--clipMidY), 0 var(--clipBotY), 0 100%, 100% 100%, 100% 0, 0 0);
 }
 
 #colRight span {
@@ -70,6 +79,7 @@
     width: var(--leftColumnWidth);
     height: auto;
     padding: 10px;
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% var(--clipExpY), var(--clipNameX) 0, 0 0);
 }
 
 #divName {
@@ -77,8 +87,10 @@
     left: var(--borderOffset);
     top: var(--borderOffset);
     width: var(--leftColumnWidth);
+    height: var(--divNameHeight);
     background-color: var(--colBgColor);
-    text-align: center;
+    /* text-align: center; */
+    clip-path: polygon(0 0, 0 100%, var(--clipNameX) 100%, 100% var(--clipTopY), 100% 0, 0 0);
 }
 
 span {
@@ -96,7 +108,7 @@ span i {
 #myName {
     font-size: 75px;
     font-weight: bolder;
-    /* margin-left: 15%; */
+    margin-left: 10%;
     /* padding: 5px; */
     font-stretch: expanded;
 }
@@ -106,6 +118,10 @@ span i {
     font-weight: bold !important;
     color: darkgrey;
     /* margin-top: 10px !important; */
+}
+
+#colRight .txtHead {
+    margin-top: 25px;
 }
 
 /* Experience */
@@ -129,6 +145,10 @@ span i {
     color: var(--expTitleColor);
 }
 
+.expLocTimeDiv {
+    margin-left: 15px;
+}
+
 .expEntity {
     font-size: 20px;
     color: var(--expEntityColor);
@@ -138,12 +158,13 @@ span i {
     font-size: 20px;
     display: inline;
     color: var(--expLocTimeColor);
+    padding: 5px;
 }
 
 .expDuties {
     font-size: 20px;
     color: var(--expDescClolor);
-    padding: 5px;
+    padding: 7px;
     margin-left: 15px;
 }
 
@@ -152,6 +173,7 @@ span i {
     /* font-style: italic; */
     color: var(--expDescClolor);
     padding: 5px;
+    
 }
 
 /* Contact info */

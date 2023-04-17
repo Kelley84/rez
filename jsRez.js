@@ -80,6 +80,7 @@ function generateLocTime(loc, time, entity) {
     var spanLoc = document.createElement('span');
     var spanTime = document.createElement('span');
     //
+    div.classList.add("expLocTimeDiv");
     spanLoc.classList.add("expLocTime");
     spanTime.classList.add("expLocTime");
     spanLoc.innerText = loc;
@@ -105,7 +106,7 @@ function generateLocTime(loc, time, entity) {
 function generateDuties(duties, detail) {
     var ul = document.createElement('ul');
     var liClass = (detail) ? "expDetails" : "expDuties";
-    ul.style.listStyleType = (detail) ? "circle" : "square";
+    ul.style.listStyleType = (detail) ? "disc" : "square";
     //
     duties.forEach(function(duty) {
         var li = document.createElement('li');
@@ -157,7 +158,7 @@ function getDevExpJSON() {
     json += '"duties":[';
     json += '{"duty":"Senior SharePoint developer, Web developer", "details":[';
     json += '"Refactored legislation process for introducing new bills (SP Workflows)",';
-    json += '"Developed out-of-scope functionality (SP Designer, JS, DOM)",';
+    json += '"Developed out-of-scope functionality (SP Designer, JavaScript, DOM)",';
     json += '"Maintained intranet site (ColdFusion); refactored data layer (Access to SQL)",';
     json += '"Refactored interstate site IPACT (ColdFusion to C#, MVC, EF)",';
     json += '"Public form for child support (VB/ASP.Net); English & Spanish (RESX)"]}';
@@ -316,16 +317,23 @@ function getSkillsJSON() {
     json += '{"text":"CSS3"},';
     json += '{"text":"BootStrap"},';
     json += '{"text":"JavaScript, DOM"},';
-    json += '{"text":"jQuery, AJAX, Razor"},';
-    json += '{"text":"C#, MVC, LINQ"},';
+    json += '{"text":"jQuery, AJAX"},';
+    json += '{"text":"C#, Java"},';
+    json += '{"text":"MVC, Razor"},';
+    json += '{"text":"EF, LINQ"},';
     json += '{"text":"WPF, XAML"},';
     json += '{"text":"VB6, VBA, VB.Net"},';
     json += '{"text":"ASP, ASP.Net"},';
+    json += '{"text":"ColdFusion"},';
     json += '{"text":"SQL, PL/SQL"},';
     json += '{"text":"XML, JSON"},';
+    json += '{"text":"WSDL, SOAP"},';
     json += '{"text":"SharePoint, DNN"},';
     json += '{"text":"TFS, GitHub"},';
-    json += '{"text":"Networking, Cloud, VMs"}';
+    json += '{"text":"IIS, Apache2"},';
+    json += '{"text":"LAMP"},';
+    json += '{"text":"Hyper-V"},';
+    json += '{"text":"Cloud"}';
     json += ']}';
     //
     return json;
@@ -399,11 +407,10 @@ function loadEducation() {
     div.appendChild(span);
     //
     span = document.createElement('span'); span.classList.add("eduTitle"); span.innerText = "Western Governors University"; div.appendChild(span);
-    span = document.createElement('span'); span.classList.add("eduDetail"); span.innerText = "October 2022 - Present  (47%)"; div.appendChild(span);
+    span = document.createElement('span'); span.classList.add("eduDetail"); span.innerText = "October 2022 - Present"; div.appendChild(span);
     span = document.createElement('span'); span.classList.add("eduDetail"); span.innerText = "B.S. in Software Engineering"; div.appendChild(span);
-    //span = document.createElement('span'); span.classList.add("eduDetail"); span.innerText = "Software Engineering"; div.appendChild(span);
-    //span = document.createElement('span'); span.classList.add("eduDetail"); span.innerText = "Bachlors in Science, Software Engineering"; div.appendChild(span);
-    span = document.createElement('span'); span.classList.add("eduDetail"); span.innerText = "Expected graduation: 2024"; div.appendChild(span);
+    span = document.createElement('span'); span.classList.add("eduDetail"); span.innerText = "Completed 60/122 units"; div.appendChild(span);
+    span = document.createElement('span'); span.classList.add("eduDetail"); span.innerText = "Expected graduation: 9-2025"; div.appendChild(span);
     //
     document.getElementById('education').appendChild(div);
 }
