@@ -169,7 +169,8 @@ function getDevExpJSON() {
     json += '"duties":[';
     json += '{"duty":"Developed custom reports for business intelligence (VBA, VB.Net)"},'
     json += '{"duty":"Automated point-of-sale system processes (Reflection for UNIX, VBA)", "details":[';
-    json += '"Daily review; pricing updates; end-of-month process; import vendor invoices; corrections"]}';
+    json += '"Daily sales review & close; end-of-month closing; end-of-year closing",';
+    json += '"Inventory updates; import vendor invoice credits; correction requests"]}';
     json += ']},';
     //
     json += '{"title":"Data Entry Programmer",';
